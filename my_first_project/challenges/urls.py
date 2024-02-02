@@ -17,5 +17,6 @@ urlpatterns = [
     # path("november", views.november),
     # path("december", views.december),
     # @ Define the URL patterns for the monthly challenges (dynamic URL patterns)
-    path("<month>", views.monthly_challenge),
+    path("<int:number>", views.monthly_challenges_by_number),
+    path("<str:month>", views.monthly_challenge),
 ]
