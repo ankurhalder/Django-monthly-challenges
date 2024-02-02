@@ -3,7 +3,7 @@ from urllib import response
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
-from django.template.loader import render_to_string
+
 
 monthly_challenges = {
     "january": "In january do not eating out meat challenge",
@@ -23,14 +23,16 @@ monthly_challenges = {
 
 # @ Define the URL patterns for the monthly challenges (dynamic URL patterns)
 def monthly_challenge(request, month):
-    # try:
-    challenge_text = monthly_challenges[month]
-    response_data = render_to_string("challenges/challenge.html")
-    return HttpResponse(response_data)
-
-
-# except:
-#     return HttpResponseNotFound("<h1>This month is not supported!</h1>")
+    try:
+        # challenge_text = monthly_challenges[month]
+        # response_data = render_to_string("challenges/challenge.html")
+        # return HttpResponse(response_data)
+        return render(
+            request,
+            "challenges/challenge.html",
+        )
+    except:
+        return HttpResponseNotFound("<h1>This month is not supported!</h1>")
 
 
 # @ Define a function to handle requests for monthly challenges by number
