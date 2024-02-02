@@ -1,6 +1,6 @@
 import re
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import redirect, render
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 monthly_challenges = {
     "january": "In january do not eating out meat challenge",
@@ -81,5 +81,21 @@ def monthly_challenge(request, month):
         return HttpResponseNotFound("This month is not supported!")
 
 
-def monthly_challenges_by_number(request, number):
-    return HttpResponse(number)
+# @ Define a function to handle requests for monthly challenges by number
+def monthly_challenges_by_number(
+    request,
+    number,
+):
+    # Create a list of sorted months from the keys of the monthly_challenges dictionary
+    sorted_months = list(monthly_challenges.keys())
+
+    # Check if the provided number is greater than the number of months
+    if number > len(sorted_months):
+        # If the number is invalid, return a 404 Not Found response
+        return HttpResponseNotFound("Invalid month")
+
+    # Calculate the index of the redirect month in the sorted_months list
+    redirect_month = sorted_months[number - 1]
+
+    # Redirect the user to the URL for the corresponding monthly challenge
+    return HttpResponseRedirect("/challenges/" + redirect_month)
