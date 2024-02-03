@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %} My Challenge's {% endblock %}</title>
+    <meta name="description" content="Add your meta description here" />
+    <meta name="keywords" content="Add your meta keywords here" />
+    <title>
+      {% block title %}
+        My Challenge's
+      {% endblock title %}
+    </title>
   </head>
   <body>
-    {% block content%} {% endblock %}
+    {% block content %}
+    {% endblock content %}
   </body>
 </html>

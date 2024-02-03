@@ -1,12 +1,13 @@
-{% extends "layout.html"%}
-
-{% block title %} All Challenges {% endblock %}
+{% extends "layout.html" %}
+{% block title %}
+  All Challenges
+{% endblock title %}
 {% block content %}
-    <ul>
-      {% for month in months %}
+  <ul>
+    {% for month in months %}
       <li>
-        <a href="{% url "month-challenge" month %}"> {{month | title}} </a>
+        <a href="{% url "month-challenge" month %}">{{ month | title }}</a>
       </li>
-      {% endfor %}
-    </ul>
-{% endblock %}
+    {% endfor %}
+  </ul>
+{% endblock content %}

@@ -1,9 +1,12 @@
-{% extends "layout.html"%} {% block title %}{{month | title}} challenge
-{%endblock %} {% block content %}
-<h1>This is {{month | title}}'s challenge</h1>
-
-{% if text is not None%}
-<h2>{{text}}</h2>
-{%else %}
-<h2>No challenge this month yet!</h2>
-{%endif%} {% endblock %}
+{% extends "layout.html" %}
+{% block title %}
+    {{ month | title }} challenge
+{% endblock title %}
+{% block content %}
+    <h1>This is {{ month | title }}'s challenge</h1>
+    {% if text is not None %}
+        <h2>{{ text }}</h2>
+    {% else %}
+        <h2>No challenge this month yet!</h2>
+    {% endif %}
+{% endblock content %}
