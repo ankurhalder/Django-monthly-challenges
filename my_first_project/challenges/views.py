@@ -17,7 +17,7 @@ monthly_challenges = {
     "september": "In september eat only vegetables challenge",
     "october": "In october eat only fruits challenge",
     "november": "In november eat only nuts challenge",
-    "december": "In december eat only seeds challenge",
+    "december": None,
 }
 
 

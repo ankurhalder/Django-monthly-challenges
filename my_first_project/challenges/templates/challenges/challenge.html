@@ -7,7 +7,14 @@
   </head>
   <body>
     <h1>This is {{month}}'s challenge</h1>
+
+    {% if text is not None%}
     <h2>{{text}}</h2>
+    {%else %}
+    <h2>No challenge this month yet!</h2>
+    {%endif%} {% comment %}
+    <h2>{{text}}</h2>
+    {% endcomment %}
     <p>{{request}}</p>
   </body>
 </html>
