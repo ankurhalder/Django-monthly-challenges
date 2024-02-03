@@ -3,6 +3,7 @@
     {{ month | title }} challenge
 {% endblock title %}
 {% block content %}
+    {% include "challenges/includes/header.html" %}
     <h1>This is {{ month | title }}'s challenge</h1>
     {% if text is not None %}
         <h2>{{ text }}</h2>
