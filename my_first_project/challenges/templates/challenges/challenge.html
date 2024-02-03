@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{month}} Challenge</title>
-  </head>
-  <body>
-    <h1>This is {{month}}'s challenge</h1>
+{% extends "layout.html"%}
+<title>{{month}} Challenge</title>
+{% block content %}
+<h1>This is {{month}}'s challenge</h1>
 
-    {% if text is not None%}
-    <h2>{{text}}</h2>
-    {%else %}
-    <h2>No challenge this month yet!</h2>
-    {%endif%} {% comment %}
-    <h2>{{text}}</h2>
-    {% endcomment %}
-    <p>{{request}}</p>
-  </body>
-</html>
+{% if text is not None%}
+<h2>{{text}}</h2>
+{%else %}
+<h2>No challenge this month yet!</h2>
+{%endif%} {% comment %}
+<h2>{{text}}</h2>
+{% endcomment %}
+<p>{{request}}</p>
+{% endblock %}
