@@ -21,6 +21,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
+    path("", views.all_months),
     path("admin/", admin.site.urls),
     path("challenges/", include("challenges.urls")),
     path("challenges/", views.all_months),
